@@ -25,6 +25,6 @@ RUN wget https://downloads.tuxfamily.org/godotengine/${GODOT_VERSION}${SUBDIR}/G
     && mv templates/* ~/.local/share/godot/templates/${GODOT_VERSION}.${RELEASE_NAME} \
     && rm -f Godot_v${GODOT_VERSION}-${RELEASE_NAME}_export_templates.tpz Godot_v${GODOT_VERSION}-${RELEASE_NAME}_linux_headless.64.zip
 
-RUN apt purge unzip wget zip && apt --purge autoremove
+RUN apt purge -y unzip wget zip && apt --purge -y autoremove
 
 RUN godot -e -q
