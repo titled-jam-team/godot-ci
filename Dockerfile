@@ -10,7 +10,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     zip \
     && rm -rf /var/lib/apt/lists/*
 
-ARG GODOT_VERSION="3.4.4"
+ARG GODOT_VERSION="3.5"
 ARG RELEASE_NAME="stable"
 ARG SUBDIR=""
 
