@@ -27,14 +27,13 @@ RUN strip bin/godot_server.x11.opt.tools.64.llvm
 
 FROM scratch
 
-COPY --from=stage1 /lib/x86_64-linux-gnu/libatomic.so.1 \
-                    /lib/x86_64-linux-gnu/libpthread.so.0 \
-                    /lib/x86_64-linux-gnu/libdl.so.2 \
-                    /lib/x86_64-linux-gnu/libm.so.6 \
-                    /lib/x86_64-linux-gnu/libc.so.6 \
-                    /lib/x86_64-linux-gnu/
-
-COPY --from=stage1 /lib64/ld-linux-x86-64.so.2 /lib64/ld-linux-x86-64.so.2
+# Oh my fucking god
+COPY --from=stage1 /usr/lib/x86_64-linux-gnu/libatomic.so.1 /lib/x86_64-linux-gnu/libatomic.so.1
+COPY --from=stage1 /usr/lib/x86_64-linux-gnu/libpthread-2.31.so /lib/x86_64-linux-gnu/libpthread.so.0
+COPY --from=stage1 /usr/lib/x86_64-linux-gnu/libdl-2.31.so /lib/x86_64-linux-gnu/libdl.so.2
+COPY --from=stage1 /usr/lib/x86_64-linux-gnu/libm-2.31.so /lib/x86_64-linux-gnu/libm.so.6
+COPY --from=stage1 /usr/lib/x86_64-linux-gnu/libc-2.31.so /lib/x86_64-linux-gnu/libc.so.6
+COPY --from=stage1 /usr/lib/x86_64-linux-gnu/ld-2.31.so /lib64/ld-linux-x86-64.so.2
 
 COPY --from=stage1 /root/src/bin/godot_server.x11.opt.tools.64.llvm /bin/godot
 
