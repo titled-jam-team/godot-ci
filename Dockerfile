@@ -25,7 +25,7 @@ RUN git init \
 RUN scons platform=server use_llvm=yes use_lld=yes use_thinlto=yes target=release_debug tools=yes optimize=size debug_symbols=no bits=64
 RUN strip bin/godot_server.x11.opt.tools.64.llvm
 
-FROM scratch
+FROM scratch as stage2
 
 # Oh my fucking god
 COPY --from=stage1 /usr/lib/x86_64-linux-gnu/libatomic.so.1.2.0 /lib/x86_64-linux-gnu/libatomic.so.1
@@ -36,5 +36,10 @@ COPY --from=stage1 /usr/lib/x86_64-linux-gnu/libc-2.31.so /lib/x86_64-linux-gnu/
 COPY --from=stage1 /usr/lib/x86_64-linux-gnu/ld-2.31.so /lib64/ld-linux-x86-64.so.2
 
 COPY --from=stage1 /root/src/bin/godot_server.x11.opt.tools.64.llvm /bin/godot
+
+FROM busybox
+
+# Flatten image
+COPY --from=stage2 / /
 
 ENTRYPOINT [ "/bin/godot" ]
