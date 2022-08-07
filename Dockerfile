@@ -28,7 +28,7 @@ RUN strip bin/godot_server.x11.opt.tools.64.llvm
 FROM scratch
 
 # Oh my fucking god
-COPY --from=stage1 /usr/lib/x86_64-linux-gnu/libatomic.so.1 /lib/x86_64-linux-gnu/libatomic.so.1
+COPY --from=stage1 /usr/lib/x86_64-linux-gnu/libatomic.so.1.2.0 /lib/x86_64-linux-gnu/libatomic.so.1
 COPY --from=stage1 /usr/lib/x86_64-linux-gnu/libpthread-2.31.so /lib/x86_64-linux-gnu/libpthread.so.0
 COPY --from=stage1 /usr/lib/x86_64-linux-gnu/libdl-2.31.so /lib/x86_64-linux-gnu/libdl.so.2
 COPY --from=stage1 /usr/lib/x86_64-linux-gnu/libm-2.31.so /lib/x86_64-linux-gnu/libm.so.6
