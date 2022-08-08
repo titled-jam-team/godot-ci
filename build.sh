@@ -5,6 +5,8 @@ apt update
 apt install -y build-essential scons pkg-config libx11-dev libxcursor-dev libxinerama-dev libgl1-mesa-dev libglu-dev \
     libasound2-dev libpulse-dev libudev-dev libxi-dev libxrandr-dev yasm clang binutils git
 
+mkdir godot
+cd godot
 git init
 git remote add origin https://github.com/godotengine/godot.git
 git fetch origin tag 3.5-stable --no-tags

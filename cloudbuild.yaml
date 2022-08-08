@@ -8,7 +8,7 @@ artifacts:
   objects:
     location: 'gs://tjt-internal-builds/godot-ci/godot-3.5-1.server.x11.opt.tools.64.llvm'
     paths:
-      - "/workspace/bin/godot_server.x11.opt.tools.64.llvm"
+      - "/workspace/godot/bin/godot_server.x11.opt.tools.64.llvm"
 options:
   pool:
     name: 'projects/titled-jam-team/locations/europe-west1/workerPools/kitty-workers-2'
