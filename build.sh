@@ -15,3 +15,5 @@ git checkout tags/3.5-stable
 
 scons platform=server use_llvm=yes use_lld=yes use_thinlto=yes target=release_debug tools=yes optimize=size debug_symbols=no use_static_cpp=yes bits=64
 strip bin/godot_server.x11.opt.tools.64.llvm
+
+cp /usr/lib/x86_64-linux-gnu/libatomic.so.1.2.0 /workspace/libatomic.so.1
