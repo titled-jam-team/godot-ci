@@ -3,6 +3,7 @@ steps:
     entrypoint: '/usr/bin/bash'
     env:
       - "DEBIAN_FRONTEND=noninteractive"
+      - "LINKFLAGS=--static"
     args: [ "/workspace/build.sh" ]
 artifacts:
   objects:
