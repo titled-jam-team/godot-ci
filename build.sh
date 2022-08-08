@@ -13,5 +13,5 @@ git remote add origin https://github.com/godotengine/godot.git
 git fetch origin tag 3.5-stable --no-tags
 git checkout tags/3.5-stable
 
-scons platform=server use_llvm=yes use_lld=yes use_thinlto=yes target=release_debug tools=yes optimize=size debug_symbols=no bits=64
+scons platform=server use_llvm=yes use_lld=yes use_thinlto=yes target=release_debug tools=yes optimize=size debug_symbols=no use_static_cpp=yes bits=64
 strip bin/godot_server.x11.opt.tools.64.llvm
