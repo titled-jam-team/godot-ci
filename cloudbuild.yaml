@@ -10,4 +10,4 @@ artifacts:
     paths:
       - "/workspace/godot/bin/godot_server.x11.opt.tools.64.llvm"
 options:
-  machineType: N1_HIGHCPU_32
+  machineType: E2_HIGHCPU_32
