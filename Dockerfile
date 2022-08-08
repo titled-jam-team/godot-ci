@@ -37,7 +37,7 @@ COPY --from=stage1 /usr/lib/x86_64-linux-gnu/ld-2.31.so /lib64/ld-linux-x86-64.s
 
 COPY --from=stage1 /root/src/bin/godot_server.x11.opt.tools.64.llvm /bin/godot
 
-FROM busybox
+FROM scratch
 
 # Flatten image
 COPY --from=stage2 / /
