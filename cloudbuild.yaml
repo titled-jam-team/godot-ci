@@ -10,4 +10,5 @@ artifacts:
     paths:
       - "/workspace/godot/bin/godot_server.x11.opt.tools.64.llvm"
 options:
-  machineType: E2_HIGHCPU_32
+  pool:
+    name: 'projects/titled-jam-team/locations/europe-west1/workerPools/kitty-workers-2'
