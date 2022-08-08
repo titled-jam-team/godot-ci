@@ -1,6 +1,8 @@
 steps:
   - name: 'ubuntu:focal'
     entrypoint: '/usr/bin/bash'
+    env:
+      - "DEBIAN_FRONTEND=noninteractive"
     args: [ "/workspace/build.sh" ]
 artifacts:
   objects:
