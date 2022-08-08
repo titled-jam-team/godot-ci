@@ -1,11 +1,9 @@
 steps:
-  - name: 'gcr.io/kaniko-project/executor:latest'
-    args:
-      - "--dockerfile=/workspace/Dockerfile"
-      - "--context=dir:///workspace"
-      - "--cache=true"
-      - "--cache-ttl=360h"
-      - "--destination=europe-west2-docker.pkg.dev/titled-jam-team/titled-jam-team/godot-ci"
+  - name: 'ubuntu:focal'
+    entrypoint: '/workspace/build.sh'
+artifacts:
+  objects:
+    location: 'gs://tjt-internal-builds/godot-ci/godot-3.5.server.x11.opt.tools.64.llvm'
 options:
   pool:
     name: 'projects/titled-jam-team/locations/europe-west2/workerPools/kitty-workers'
