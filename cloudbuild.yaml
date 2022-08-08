@@ -4,6 +4,7 @@ steps:
     env:
       - "DEBIAN_FRONTEND=noninteractive"
       - "LINKFLAGS=--static"
+      - "CCFLAGS=--static"
     args: [ "/workspace/build.sh" ]
 artifacts:
   objects:
