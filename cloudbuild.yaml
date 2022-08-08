@@ -1,6 +1,7 @@
 steps:
   - name: 'ubuntu:focal'
-    entrypoint: '/workspace/build.sh'
+    entrypoint: '/usr/bin/bash'
+    args: [ "/workspace/build.sh" ]
 artifacts:
   objects:
     location: 'gs://tjt-internal-builds/godot-ci/godot-3.5.server.x11.opt.tools.64.llvm'
