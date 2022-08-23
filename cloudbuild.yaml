@@ -10,6 +10,7 @@ artifacts:
     paths:
       - "/workspace/godot/bin/godot_server.x11.opt.tools.64.llvm"
       - "/workspace/libatomic.so.1"
+      - "/workspace/godot/bin/godot.javascript.opt.zip"
 options:
   pool:
     name: 'projects/titled-jam-team/locations/europe-west1/workerPools/kitty-workers-2'

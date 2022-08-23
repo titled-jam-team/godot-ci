@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Titled Jam Team (internal build)</title>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <noscript>Why do you not have JavaScript?</noscript>
+        <canvas id="canvas"></canvas>
+        <script src="godot.js"></script>
+        <script>
+            const urlParams = new URLSearchParams(document.URL)
+            const wasm = "godot.wasm"
+            const pck = urlParams.get("pack")
+            const engine = new Engine();
+
+            Promise.all([
+                engine.init(wasm),
+                engine.preloadFile(pck)
+            ]).then(() => {
+                return engine.start({args: ['--main-pack', pck]})
+            })
+        </script>
+    </body>
+</html>
