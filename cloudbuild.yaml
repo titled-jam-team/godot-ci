@@ -12,4 +12,5 @@ artifacts:
       - "/workspace/libatomic.so.1"
       - "/workspace/godot/bin/godot.javascript.opt.zip"
 options:
-  machineType: 'E2_HIGHCPU_32'
+  pool:
+    name: 'projects/titled-jam-team/locations/europe-west1/workerPools/kitty-workers-3'
