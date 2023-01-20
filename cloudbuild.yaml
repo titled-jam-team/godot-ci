@@ -6,11 +6,10 @@ steps:
     args: [ "/workspace/build.sh" ]
 artifacts:
   objects:
-    location: 'gs://tjt-internal-builds/godot-ci/godot-3.5-1.server.x11.opt.tools.64.llvm'
+    location: 'gs://tjt-internal-builds/godot-ci/godot-3.5.1-1.server.x11.opt.tools.64.llvm'
     paths:
       - "/workspace/godot/bin/godot_server.x11.opt.tools.64.llvm"
       - "/workspace/libatomic.so.1"
       - "/workspace/godot/bin/godot.javascript.opt.zip"
 options:
-  pool:
-    name: 'projects/titled-jam-team/locations/europe-west1/workerPools/kitty-workers-2'
+  machineType: 'E2_HIGHCPU_32'
